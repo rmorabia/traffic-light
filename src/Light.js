@@ -6,7 +6,12 @@ class Light extends Component {
     return (
       <div className='box'>
         <div className='light'>
-          cool shit
+          <div className='red'>
+          </div>
+          <div className='yellow'>
+          </div>
+          <div className='green'>
+          </div>
         </div>
       </div>
     )
