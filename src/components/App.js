@@ -25,13 +25,13 @@ class App extends Component {
   render () {
     return (
       <div
-        className='background'
         style={{
           background: this.backgroundGradient(),
           backgroundSize: '400% 400%',
           animation: 'Gradient 30s ease infinite'
         }}>
         <Traffic />
+        <footer>Built by <a href='http://rmorabia.com'>Radhika Morabia</a>. Source on <a href='http://github.com/rmorabia/traffic-light'>GitHub</a>.</footer>
       </div>
     )
   }
