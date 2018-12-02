@@ -3,35 +3,26 @@ import Traffic from './Traffic'
 import 'normalize.css'
 
 class App extends Component {
-  constructor (props) {
-    super(props)
-    this.backgroundGradient = this.backgroundGradient.bind(this)
-  }
-
-  // This is the most egregious code ever, but I NEED it.
-  backgroundGradient () {
-    let array = [0, 1, 2, 3]
-
-    let colorArray = array.map(() => {
-      const r = (Math.floor(Math.random() * 156) + 90)
-      const g = (Math.floor(Math.random() * 156) + 90)
-      const b = (Math.floor(Math.random() * 156) + 90)
-
-      return 'rgb(' + r + ',' + g + ',' + b + ')'
-    })
-    return 'linear-gradient(-45deg, ' + colorArray[0] + ', ' + colorArray[1] + ', ' + colorArray[2] + ', ' + colorArray[3] + ')'
-  }
+  backgroundGradient = () => {
+    // confirmed this function is not the problem
+    const color = () => Math.floor(Math.random() * 156) + 90
+    return `linear-gradient(-45deg, ${color()}, ${color()}, ${color()}, ${color()}`
+  };
 
   render () {
     return (
       <div
         style={{
-          background: this.backgroundGradient(),
+          background: this.backgroundGradient(), // what on earth is wrong with my calling it back here
           backgroundSize: '400% 400%',
           animation: 'Gradient 30s ease infinite'
-        }}>
+        }}
+      >
         <Traffic />
-        <footer>Built by <a href='http://rmorabia.com'>Radhika Morabia</a>. Source on <a href='http://github.com/rmorabia/traffic-light'>GitHub</a>.</footer>
+        <footer>
+          Built by <a href='http://rmorabia.com'>Radhika Morabia</a>. Source on{' '}
+          <a href='http://github.com/rmorabia/traffic-light'>GitHub</a>.
+        </footer>
       </div>
     )
   }

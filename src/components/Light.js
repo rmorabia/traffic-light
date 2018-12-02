@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Light = props => (
+const Light = ({ toggle, index, color }) => (
   <div
     className='light'
-    style={{ backgroundColor: (props.toggle === props.index) ? props.color : 'white' }}
+    style={{ backgroundColor: toggle === index ? color : 'white' }}
   />
 )
 
