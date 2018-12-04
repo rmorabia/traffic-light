@@ -4,10 +4,12 @@ import 'normalize.css'
 
 class App extends Component {
   backgroundGradient = () => {
-    // confirmed this function is not the problem
-    const color = () => Math.floor(Math.random() * 156) + 90
-    return `linear-gradient(-45deg, ${color()}, ${color()}, ${color()}, ${color()}`
-  };
+    const color = () => {
+      const hue = Math.floor(Math.random() * 360);
+      return `hsl(${hue}, 80%, 80%)`
+    }
+    return `linear-gradient(-45deg, ${color()}, ${color()}, ${color()}, ${color()})`
+  }
 
   render () {
     return (
